@@ -106,3 +106,22 @@ Export("libs")
 Export("libpath")
 Export("DEBUG")
 SConscript('tests/SConscript')
+
+
+def uses_gcov():
+    return int(ARGUMENTS.get('gcov', 0))
+
+def make_gcov_clean():
+    """
+    Clean gcov related files.
+    """
+    import glob 
+    env.Clean(target, glob.glob('*.gcno'))
+    env.Clean(target, glob.glob('*.gcda'))
+    env.Clean(target, glob.glob('*.gcov'))
+
+if (uses_gcov()):
+    env.Append(CCFLAGS = '--coverage')
+    env.Append(LINKFLAGS = '-fprofile-arcs')
+    env.Append(LIBS = ['gcov'])
+    make_gcov_clean()

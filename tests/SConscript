@@ -29,7 +29,7 @@ env.Program(
     source=['binstest2.cpp'],
     CPPPATH=cpppath,
     LIBS=libs,
-    LIBPATH=libpath )
+    LIBPATH=libpath)
 
 env.Program( 
     target='dgramtest',
@@ -41,30 +41,6 @@ env.Program(
 env.Program( 
     target='hashtest',
     source=['hashtest.cpp'],
-    CPPPATH=cpppath,
-    LIBS=libs,
-    LIBPATH=libpath )
-
-#env.Program( 
-#    target='ledbattest',
-#    source=['ledbattest.cpp'],
-#    CPPPATH=cpppath,
-#    LIBS=libs,
-#    LIBPATH=libpath )
-
-
-#if sys.platform != "win32":
-#    # Arno: Needs getopt
-#    env.Program( 
-#        target='ledbattest2',
-#        source=['ledbattest2.cpp'],
-#        CPPPATH=cpppath,
-#        LIBS=libs,
-#        LIBPATH=libpath )
-
-env.Program( 
-    target='freemap',
-    source=['freemap.cpp'],
     CPPPATH=cpppath,
     LIBS=libs,
     LIBPATH=libpath )
@@ -89,4 +65,29 @@ env.Program(
     CPPPATH=cpppath,
     LIBS=libs,
     LIBPATH=libpath )
+
+	
+#env.Program( 
+#    target='ledbattest',
+#    source=['ledbattest.cpp'],
+#    CPPPATH=cpppath,
+#    LIBS=libs,
+#    LIBPATH=libpath )
+
+
+#if sys.platform != "win32":
+#    # Arno: Needs getopt
+#    env.Program( 
+#        target='ledbattest2',
+#        source=['ledbattest2.cpp'],
+#        CPPPATH=cpppath,
+#        LIBS=libs,
+#        LIBPATH=libpath )
+
+# env.Program( 
+#     target='freemap',
+#     source=['freemap.cpp'],
+#     CPPPATH=cpppath,
+#     LIBS=libs,
+#     LIBPATH=libpath )
 
