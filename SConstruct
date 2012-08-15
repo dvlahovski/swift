@@ -119,6 +119,9 @@ def make_gcov_clean():
     env.Clean(target, glob.glob('*.gcno'))
     env.Clean(target, glob.glob('*.gcda'))
     env.Clean(target, glob.glob('*.gcov'))
+    env.Clean(target, glob.glob('tests/*.gcno'))
+    env.Clean(target, glob.glob('tests/*.gcda'))
+    env.Clean(target, glob.glob('tests/*.gcov'))
 
 if (uses_gcov()):
     env.Append(CCFLAGS = '--coverage')
